@@ -29,12 +29,12 @@ public class CourseController {
         return new ResponseEntity<>(allCourses,HttpStatus.OK);
     }
 
-//    @GetMapping(path = "/api/course/findAllCourses", produces = "application/json")
-//    public HttpEntity<List<CourseDto>> findAllCourses(){
-//        List<CourseDto> allCourses = courseService.findAllCourses();
-//
-//        return new ResponseEntity<>(allCourses, HttpStatus.OK);
-//    }
+    @GetMapping(path = "/api/course/findAllCourses", produces = "application/json")
+    public HttpEntity<List<CourseDto>> findAllCourses(){
+        List<CourseDto> allCourses = courseService.findAllCourses();
+
+        return new ResponseEntity<>(allCourses, HttpStatus.OK);
+    }
 
     @GetMapping(path = "/look-up/{inputString}", produces = "application/json")
     public HttpEntity<Course> searchCourse(@PathVariable("inputString") String inputString) {
